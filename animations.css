@@ -1,0 +1,87 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+    opacity: 0; /* garante que começa invisível */
+  }
+  
+  /* Fade-in simples, sem reposicionamento */
+@keyframes fadeInOpacity {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeInOpacity 1s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Fade-in centralizado, com translate, para elementos no centro da tela */
+  @keyframes fadeInCentered {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -40%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  .fade-in-centered {
+    animation: fadeInCentered 1.2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes balancoVertical {
+    0%   { transform: translateY(0px) rotate(0deg); }
+    30%  { transform: translateY(2px) rotate(0.3deg); }
+    50%  { transform: translateY(4px) rotate(0.6deg); }
+    70%  { transform: translateY(2px) rotate(0.3deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+  
+  .balanco {
+    animation: balancoVertical 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    transform-origin: bottom left;
+  }
+
+  @keyframes escorregaNaCurva {
+    0% {
+      transform: translate(80px, -100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+  
+  .botao-animado {
+    animation: escorregaNaCurva 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes balancoFolha {
+    0%   { transform: translateY(0) rotate(0deg); }
+    25%  { transform: translateY(2px) rotate(2deg); }
+    50%  { transform: translateY(0) rotate(-2.5deg); }
+    75%  { transform: translateY(-1.5px) rotate(1.5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+  }
+  
+  .folha-ao-vento {
+    animation: balancoFolha 5s ease-in-out infinite;
+    transform-origin: top right;
+  }
+  
+  

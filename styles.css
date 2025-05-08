@@ -1,0 +1,570 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+/* Descanso */
+
+#tela-descanso {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.fundo-imagem {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: fill;
+  z-index: 0;
+  display: block;
+}
+
+.logo-e-botao {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  gap: 7vh;
+}
+
+.logo {
+  width: 47vw;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.botao {
+  width: 20vw;
+  height: auto;
+  cursor: pointer;
+}
+
+
+/* MENU */
+
+.tela-menu {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-fundo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 0;
+}
+
+.menu-overlay {
+  position: absolute;
+  width: 77%;
+  height: 85vh;
+  object-fit: fill;
+  z-index: 1;
+  pointer-events: none;
+  bottom: 0;
+}
+
+.folha-menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 22vw;
+  height: 20vh;
+  z-index: 2;
+}
+
+.logo-menu {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: auto;
+  height: 18vh;
+  z-index: 2;
+}
+
+.container-direita {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  height: 100vh;
+  aspect-ratio: 9/16;
+  /* ou defina uma largura fixa se preferir */
+  z-index: 2;
+}
+
+.imagem-direita {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+}
+
+.botao-menu {
+  position: absolute;
+  width: 10vw;
+  height: auto;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Posições relativas ao container */
+#botaoProjeto {
+  top: 22%;
+  right: 40%;
+}
+
+#botaoGaleria {
+  top: 37%;
+  right: 53%;
+}
+
+#botaoLocalizacao {
+  top: 57%;
+  right: 61%;
+}
+
+#botaoFilme {
+  top: 73%;
+  right: 73%;
+}
+
+#botaoProjeto.botao-animado {
+  animation-delay: 0.1s;
+}
+
+#botaoGaleria.botao-animado {
+  animation-delay: 0.25s;
+}
+
+#botaoLocalizacao.botao-animado {
+  animation-delay: 0.4s;
+}
+
+#botaoFilme.botao-animado {
+  animation-delay: 0.55s;
+}
+
+.botao-menu:hover {
+  transform: scale(1.05);
+}
+
+/* Tela de implantacao */
+
+.botao-fechar {
+  position: absolute;
+  top: 3vh;
+  right: 2vw;
+  width: 3vh;
+  height: auto;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.container-implantacao {
+  position: absolute;
+  top: 42%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 2vw;
+  z-index: 5;
+}
+
+.imagem-direita-implantacao {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* Botões individuais */
+.botao-implantacao1-wrapper,
+.botao-implantacao2-wrapper,
+.botao-implantacao3-wrapper,
+.botao-implantacao4-wrapper {
+  margin: 1vh 0;
+  z-index: 2;
+}
+
+.botao-implantacao {
+  width: 8vw;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.botao-implantacao:hover {
+  transform: scale(1.1);
+}
+
+.faixa-superior-esquerda {
+  position: absolute;
+  top: 7%;
+  left: 0;
+  width: 33.5vw;
+  z-index: 3;
+  height: 9vh;
+}
+
+.plantinhas-implantacao {
+  position: absolute;
+  bottom: 0;
+  left: 1%;
+  width: 21vw;
+  height: 27vh;
+  z-index: 3;
+}
+
+.setas-navegacao-implantacao {
+  position: absolute;
+  bottom: 8vh;
+  right: 6vw;
+  display: flex;
+  gap: 4vw;
+  z-index: 5;
+}
+
+.seta-implantacao {
+  width: 4vh;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.seta-implantacao:hover {
+  transform: scale(1.1);
+}
+
+/* Tela Unidades */
+
+.planta-tipo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30vw;
+  height: 16vh;
+  z-index: 3;
+}
+
+/* Tela Diferenciais */
+
+.verde-inteligente {
+  position: absolute;
+  bottom: 4vh;
+  left: 0;
+  width: 12.5vw;
+  z-index: 3;
+}
+
+.faixa-texto {
+  position: absolute;
+  bottom: 4vh;
+  left: 7vw;
+  width: 86vw;
+  z-index: 2;
+}
+
+.plantinha-diferenciais {
+  position: absolute;
+  top: 4.7vh;
+  right: 5vw;
+  width: 12vw;
+  height: 17vh;
+  z-index: 3;
+}
+
+.grid-diferenciais {
+  position: absolute;
+  top: 19vh;
+  left: 7vw;
+  width: 84vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4vh 0vw;
+  z-index: 3;
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-diferenciais img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.grid-diferenciais img:hover {
+  transform: scale(1.05);
+}
+
+/* Tela Ficha Tecnica */
+
+.texto-logo {
+  position: absolute;
+  top: 14vh;
+  left: 8vw;
+  width: 37vw;
+  height: 63vh;
+}
+
+.texto-ficha {
+  position: absolute;
+  top: 14vh;
+  right: 11vw;
+  width: 37vw;
+  height: 63vh;
+}
+
+/* Tela Galeria */
+
+.folha-galeria {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 16vw;
+  height: 20vh;
+  z-index: 2;
+}
+
+.container-galeria {
+  position: relative;
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.foto-galeria {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  height: 90%;
+  width: 100%;
+  object-fit: fill;
+  display: block;
+  z-index: 2;
+}
+
+.seta-galeria {
+  width: 4vh;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.seta-galeria:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.esquerda {
+  left: 2vw;
+}
+
+.direita {
+  right: 2vw;
+}
+
+/* Pop up Galeria */
+
+.popup-zoom {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.popup-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding: 5vw;
+  box-sizing: border-box;
+}
+
+.popup-content {
+  max-width: 100%;
+  max-height: 100%;
+  animation: fadeInZoom 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem-zoom {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  touch-action: pinch-zoom;
+}
+
+/* Tela Foto Area */
+
+.container-foto-area {
+  position: relative;
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.foto-foto-area {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  height: 90%;
+  width: 100%;
+  object-fit: fill;
+  display: block;
+  z-index: 2;
+}
+
+.pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 1;
+  /* Mudar */
+}
+
+.pin-campinas {
+  top: 11%;
+  left: 8.8%;
+  width: 11.4%;
+  height: 4.5%;
+}
+
+.pin-rod-anhanguera {
+  top: 36%;
+  left: 8.8%;
+  width: 12%;
+  height: 34.8%;
+}
+
+.pin-rod-bandeirantes {
+  top: 39%;
+  left: 14.8%;
+  width: 12.4%;
+  height: 29.6%;
+}
+
+.pin-shopping-jundiai {
+  top: 43%;
+  left: 19%;
+  width: 12.1%;
+  height: 18.6%;
+}
+
+.pin-aeroporto {
+  top: 46.5%;
+  left: 24.5%;
+  width: 8.5%;
+  height: 14.6%;
+}
+
+.pin-verde-vida {
+  top: 32.5%;
+  left: 50.5%;
+  width: 23.5%;
+  height: 16.6%;
+}
+
+.pin-sao-paulo {
+  top: 41.5%;
+  left: 92.5%;
+  width: 10.5%;
+  height: 4.6%;
+}
+
+.plantinha-foto-area {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  width: 12vw;
+  height: 17vh;
+  z-index: 3;
+}
+
+.container-area-foto {
+  position: absolute;
+  top: 26%;
+  right: -2%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 2vw;
+  z-index: 5;
+}
+
+/* Tela Pontos */
+
+.plantinha-pontos {
+  position: absolute;
+  bottom: 4.6%;
+  left: 4.9%;
+  width: 19vw;
+  height: 27vh;
+  z-index: 3;
+  transform: rotate(-180deg);
+}
+
+.faixa-bairro {
+  position: absolute;
+  top: 9%;
+  left: 0;
+  width: 44.5vw;
+  z-index: 3;
+  height: 6.8vh;
+}
+
+.maozinha {
+  position: absolute;
+  top: 45%;
+  left: 39vw;
+  width: 2.2vw;
+  z-index: 3;
+  height: 5.8vh;
+}
+
+.texto-pontos {
+  position: absolute;
+  top: 25vh;
+  left: 7vw;
+  width: 30vw;
+  height: 39vh;
+}

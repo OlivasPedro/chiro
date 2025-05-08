@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Verde Vida</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="stylesheet" href="animations.css?v=1">
+</head>
+
+<body>
+
+  <!-- TELA DE DESCANSO -->
+  <section id="tela-descanso">
+    <img src="images/tela-descanso/fundo.png" alt="Imagem de Fundo" class="fundo-imagem">
+
+    <!-- fade-in-centered: para elementos centralizados -->
+    <div class="logo-e-botao fade-in-centered">
+      <img src="images/tela-descanso/logo-verde-vida.png" alt="Logo Verde Vida" class="logo">
+      <img src="images/tela-descanso/toque-para-iniciar.png" alt="Toque para Iniciar" class="botao"
+        id="btnIniciarNavegacao">
+    </div>
+  </section>
+
+  <!-- TELA DE MENU -->
+  <section id="menu" class="tela-menu fade-in" style="display: none;">
+    <!-- Vídeo de fundo -->
+    <video class="video-fundo" autoplay muted loop playsinline>
+      <source src="images/tela-menu/ceu.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos em HTML5.
+    </video>
+
+    <!-- Imagem sobre o vídeo -->
+    <img src="images/tela-menu/empreendimento.png" alt="Overlay do Menu" class="menu-overlay">
+
+    <!-- Folha no canto inferior esquerdo -->
+    <img src="images/tela-menu/folha.png" alt="Folha canto inferior esquerdo" class="folha-menu balanco">
+
+    <div class="container-direita">
+      <!-- Imagem lateral direita -->
+      <img src="images/tela-menu/base-botoes.png" alt="Imagem Lateral Direita" class="imagem-direita">
+
+      <!-- Botão 1: Projeto -->
+      <div class="botao-wrapper botao1-wrapper">
+        <img src="images/tela-menu/botoes/projeto.png" alt="Projeto" class="botao-menu" id="botaoProjeto">
+      </div>
+
+      <!-- Botão 2: Galeria -->
+      <div class="botao-wrapper botao2-wrapper">
+        <img src="images/tela-menu/botoes/galeria.png" alt="Galeria" class="botao-menu" id="botaoGaleria">
+      </div>
+
+      <!-- Botão 3: Localização -->
+      <div class="botao-wrapper botao3-wrapper">
+        <img src="images/tela-menu/botoes/localizacao.png" alt="Localização" class="botao-menu" id="botaoLocalizacao">
+      </div>
+
+      <!-- Botão 4: Filme -->
+      <div class="botao-wrapper botao4-wrapper">
+        <img src="images/tela-menu/botoes/filme.png" alt="Filme" class="botao-menu" id="botaoFilme">
+      </div>
+
+      <img src="images/tela-menu/logo-vida-verde.png" alt="Logo Verde Vida" class="logo-menu">
+
+    </div>
+
+  </section>
+
+  <!-- TELA DE IMPLANTAÇÃO -->
+  <section id="tela-implantacao" style="display: none;" class="fade-in">
+
+    <!-- Imagem de fundo -->
+    <img src="images/tela-implantacao/setor-01-fundo.png" alt="Fundo da Tela de Implantação" class="fundo-imagem"
+      id="fundoImplantacao">
+
+    <!-- Faixa no quarto superior esquerdo -->
+    <img src="images/tela-implantacao/setor-01.png" alt="Faixa Decorativa" class="faixa-superior-esquerda"
+      id="faixaImplantacao">
+
+    <!-- Barra lateral direita com botões -->
+    <div class="container-direita container-implantacao">
+
+      <!-- Botão 1 -->
+      <div class="botao-implantacao1-wrapper">
+        <img src="images/tela-implantacao/botoes/implantacao.png" alt="Implantação 1" class="botao-implantacao"
+          id="btnimplantacaoImplantacao">
+      </div>
+
+      <!-- Botão 2 -->
+      <div class="botao-implantacao2-wrapper">
+        <img src="images/tela-implantacao/botoes/unidades.png" alt="Implantação 2" class="botao-implantacao"
+          id="btnUnidadesImplantacao">
+      </div>
+
+      <!-- Botão 3 -->
+      <div class="botao-implantacao3-wrapper">
+        <img src="images/tela-implantacao/botoes/diferenciais.png" alt="Implantação 3" class="botao-implantacao"
+          id="btnDiferenciaisImplantacao">
+      </div>
+
+
+      <!-- Botão 4 -->
+      <div class="botao-implantacao4-wrapper">
+        <img src="images/tela-implantacao/botoes/ficha-tecnica.png" alt="Implantação 4" class="botao-implantacao"
+          id="btnFichaTecnicaImplantacao">
+      </div>
+    </div>
+
+    <!-- Botão Fechar -->
+    <img src="images/x.png" alt="Fechar" id="btnFecharImplantacao" class="botao-fechar">
+
+    <img src="images/tela-implantacao/plantinhas.png" alt="Plantinhas" class="plantinhas-implantacao">
+
+    <!-- Setas de navegação -->
+    <div class="setas-navegacao-implantacao">
+      <img src="images/tela-implantacao/seta-esquerda.png" alt="Seta Esquerda" id="setaEsquerda"
+        class="seta-implantacao">
+      <img src="images/tela-implantacao/seta-direita.png" alt="Seta Direita" id="setaDireita" class="seta-implantacao">
+    </div>
+  </section>
+
+  <!-- TELA DE UNIDADES -->
+  <section id="tela-unidades" style="display: none;" class="fade-in">
+
+    <!-- Botão Fechar -->
+    <img src="images/x.png" alt="Fechar" id="btnFecharUnidades" class="botao-fechar">
+
+    <!-- Imagem de fundo -->
+    <img src="images/tela-unidades/fundo-01.png" alt="Fundo da Tela de Unidades" class="fundo-imagem"
+      id="fundoUnidades">
+
+    <!-- Imagem Tipo Planta -->
+    <img src="images/tela-unidades/planta-tipo.png" alt="Planta Tipo" class="planta-tipo">
+
+    <!-- Barra lateral direita com botões -->
+    <div class="container-direita container-implantacao">
+
+      <!-- Botão 1 -->
+      <div class="botao-implantacao1-wrapper">
+        <img src="images/tela-unidades/botoes/implantacao.png" alt="Implantação 1" class="botao-implantacao"
+          id="btnImplantacaoUnidades">
+      </div>
+
+      <!-- Botão 2 -->
+      <div class="botao-implantacao2-wrapper">
+        <img src="images/tela-unidades/botoes/unidades.png" alt="Implantação 2" class="botao-implantacao"
+          id="btnUnidadesUnidades">
+      </div>
+
+      <!-- Botão 3 -->
+      <div class="botao-implantacao3-wrapper">
+        <img src="images/tela-unidades/botoes/diferenciais.png" alt="Implantação 3" class="botao-implantacao"
+          id="btnDiferenciaisUnidades">
+      </div>
+
+      <!-- Botão 4 -->
+      <div class="botao-implantacao4-wrapper">
+        <img src="images/tela-unidades/botoes/ficha-tecnica.png" alt="Implantação 4" class="botao-implantacao"
+          id="btnFichaTecnicaUnidades">
+      </div>
+    </div>
+
+    <!-- Folha no canto inferior esquerdo -->
+    <img src="images/tela-unidades/folha.png" alt="Folha canto inferior esquerdo" class="folha-menu balanco">
+
+    <!-- Setas de navegação -->
+    <div class="setas-navegacao-implantacao">
+      <img src="images/tela-unidades/seta-esquerda.png" alt="Seta Esquerda" id="setaEsquerdaUnidades"
+        class="seta-implantacao">
+      <img src="images/tela-unidades/seta-direita.png" alt="Seta Direita" id="setaDireitaUnidades"
+        class="seta-implantacao">
+    </div>
+
+  </section>
+
+  <!-- TELA DE DIFERENCIAIS -->
+  <section id="tela-diferenciais" style="display: none;" class="fade-in">
+
+    <!-- Botão Fechar -->
+    <img src="images/x.png" alt="Fechar" id="btnFecharDiferenciais" class="botao-fechar">
+
+    <!-- Imagem de fundo -->
+    <img src="images/tela-diferenciais/fundo.png" alt="Fundo da Tela de Diferenciais" class="fundo-imagem"
+      id="fundoDiferenciais">
+
+    <!-- Barra lateral direita com botões -->
+    <div class="container-direita container-implantacao">
+
+      <!-- Botão 1 -->
+      <div class="botao-implantacao1-wrapper">
+        <img src="images/tela-diferenciais/botoes/implantacao.png" alt="Implantação 1" class="botao-implantacao"
+          id="btnImplantacaoDiferenciais">
+      </div>
+
+      <!-- Botão 2 -->
+      <div class="botao-implantacao2-wrapper">
+        <img src="images/tela-diferenciais/botoes/unidades.png" alt="Implantação 2" class="botao-implantacao"
+          id="btnUnidadesDiferenciais">
+      </div>
+
+      <!-- Botão 3 -->
+      <div class="botao-implantacao3-wrapper">
+        <img src="images/tela-diferenciais/botoes/diferenciais.png" alt="Implantação 3" class="botao-implantacao"
+          id="btnDiferenciaisDiferenciais">
+      </div>
+
+      <!-- Botão 4 -->
+      <div class="botao-implantacao4-wrapper">
+        <img src="images/tela-diferenciais/botoes/ficha-tecnica.png" alt="Implantação 4" class="botao-implantacao"
+          id="btnFichaTecnicaDiferenciais">
+      </div>
+    </div>
+
+    <!-- Circulo -->
+    <img src="images/tela-diferenciais/verde-inteligente.png" alt="Circulo Verde Inteligente" class="verde-inteligente">
+
+    <!-- Texto -->
+    <img src="images/tela-diferenciais/texto.png" alt="Faixa com Texto" class="faixa-texto">
+
+    <!-- Planta -->
+    <img src="images/tela-diferenciais/plantinha.png" alt="Plantinha" class="plantinha-diferenciais folha-ao-vento"
+      id="plantinhaDiferenciais">
+
+    <!-- Grid de diferenciais -->
+    <div class="grid-diferenciais">
+      <img src="images/tela-diferenciais/reuso-de-agua.png" alt="Reuso de água">
+      <img src="images/tela-diferenciais/aqueimento-solar.png" alt="Aquecimento Solar">
+      <img src="images/tela-diferenciais/irrigacao.png" alt="Irrigação Automatizada">
+      <img src="images/tela-diferenciais/04-piscinas.png" alt="Piscinas Aquecidas">
+      <img src="images/tela-diferenciais/academia.png" alt="Academia">
+      <img src="images/tela-diferenciais/geradores-a-gas.png" alt="Geradores a Gás">
+      <img src="images/tela-diferenciais/reuso-de-agua.png" alt="Revestimento Porcelanato">
+      <img src="images/tela-diferenciais/area-verde-privada.png" alt="Área verde privativa">
+      <img src="images/tela-diferenciais/iluminacao-energia-solar.png" alt="Energia Solar">
+      <img src="images/tela-diferenciais/fiacao-eletrica.png" alt="Fiação Subterrânea">
+      <img src="images/tela-diferenciais/prainha.png" alt="Prainha">
+      <img src="images/tela-diferenciais/ponto-recarga-carros.png" alt="Recarga Carro Elétrico">
+    </div>
+  </section>
+
+  <!-- TELA DE FICHA TECNICA -->
+  <section id="tela-ficha-tecnica" style="display: none;" class="fade-in">
+
+    <!-- Botão Fechar -->
+    <img src="images/x.png" alt="Fechar" id="btnFecharFichaTecnica" class="botao-fechar">
+
+    <!-- Imagem de fundo -->
+    <img src="images/tela-ficha-tecnica/fundo.png" alt="Fundo da Tela de Diferenciais" class="fundo-imagem"
+      id="fundoDiferenciais">
+
+    <!-- Barra lateral direita com botões -->
+    <div class="container-direita container-implantacao">
+
+      <!-- Botão 1 -->
+      <div class="botao-implantacao1-wrapper">
+        <img src="images/tela-ficha-tecnica/botoes/implantacao.png" alt="Implantação 1" class="botao-implantacao"
+          id="btnImplantacaoFichaTecnica">
+      </div>
+
+      <!-- Botão 2 -->
+      <div class="botao-implantacao2-wrapper">
+        <img src="images/tela-ficha-tecnica/botoes/unidades.png" alt="Implantação 2" class="botao-implantacao"
+          id="btnUnidadesFichaTecnica">
+      </div>
+
+      <!-- Botão 3 -->
+      <div class="botao-implantacao3-wrapper">
+        <img src="images/tela-ficha-tecnica/botoes/diferenciais.png" alt="Implantação 3" class="botao-implantacao"
+          id="btnDiferenciaisFichaTecnica">
+      </div>
+
+      <!-- Botão 4 -->
+      <div class="botao-implantacao4-wrapper">
+        <img src="images/tela-ficha-tecnica/botoes/ficha-tecnica.png" alt="Implantação 4" class="botao-implantacao"
+          id="btnFichaTecnicaFichaTecnica">
+      </div>
+    </div>
+
+    <!-- Texto Esquerda -->
+    <img src="images/tela-ficha-tecnica/texto-verde-vida.png" alt="Texto Logo" class="texto-logo">
+
+    <!-- Texto Direita -->
+    <img src="images/tela-ficha-tecnica/texto-ficha-tecnica.png" alt="Texto Ficha Técnica" class="texto-ficha">
+
+    <!-- Folha no canto inferior esquerdo -->
+    <img src="images/tela-ficha-tecnica/folha.png" alt="Folha canto inferior esquerdo" class="folha-menu balanco">
+  </section>
+
+  <!-- TELA DA GALERIA -->
+  <section id="tela-galeria" style="display: none;" class="fade-in">
+
+    <!-- Botão Fechar -->
+    <img src="images/x.png" alt="Fechar" id="btnFecharGaleria" class="botao-fechar">
+
+    <!-- Imagem de fundo -->
+    <img src="images/tela-galeria/fundo.png" alt="Fundo da Tela da Galeria" class="fundo-imagem" id="fundoGaleria">
+
+    <div class="container-galeria">
+      <img src="images/tela-galeria/normal/beach-lounge.png" alt="Foto Galeria" class="foto-galeria" id="fotoGaleria">
+      <img src="images/tela-galeria/seta-esquerda.png" alt="Seta Esquerda" class="seta-galeria esquerda"
+        id="setaEsquerdaGaleria">
+      <img src="images/tela-galeria/seta-direita.png" alt="Seta Direita" class="seta-galeria direita"
+        id="setaDireitaGaleria">
+    </div>
+
+    <!-- Folha no canto inferior esquerdo -->
+    <img src="images/tela-galeria/folha.png" alt="Folha canto inferior esquerdo" class="folha-galeria balanco">
+
+  </section>
+
+  <div id="popupZoom" class="popup-zoom">
+    <div class="popup-overlay">
+      <div class="popup-content">
+        <img src="images/tela-galeria/aberta/beach-lounge.jpg" alt="Imagem Zoom" class="imagem-zoom" />
+      </div>
+    </div>
+  </div>
+
+  <!-- TELA FOTO AREA -->
+  <section id="tela-foto-area" style="display: none;" class="fade-in">
+
+    <!-- Botão Fechar -->
+    <img src="images/tela-foto-area/x.png" alt="Fechar" id="btnFecharFotoArea" class="botao-fechar">
+
+    <!-- Imagem de fundo -->
+    <img src="images/tela-foto-area/fundo.png" alt="Fundo da Tela da Foto Area" class="fundo-imagem" id="fundoFotoArea">
+
+    <!-- Foto + Pin -->
+    <div class="container-foto-area">
+      <img src="images/tela-foto-area/foto.png" alt="Foto Principal" class="foto-foto-area" id="fotoFotoArea">
+
+      <img src="images/tela-foto-area/campinas.png" alt="Pin Campinas" class="pin pin-campinas" id="pinCampinas">
+
+      <img src="images/tela-foto-area/rod-anhanguera.png" alt="Pin Anhanguera" class="pin pin-rod-anhanguera"
+        id="pinRodAnhanguera">
+
+      <img src="images/tela-foto-area/rod-bandeirantes.png" alt="Pin Bandeirantes" class="pin pin-rod-bandeirantes"
+        id="pinRodBandeirantes">
+
+      <img src="images/tela-foto-area/shopping-jundiai.png" alt="Pin Shoppin Jundiai" class="pin pin-shopping-jundiai"
+        id="pinShoppingJundiai">
+
+      <img src="images/tela-foto-area/aeroporto.png" alt="Pin Aeroporto" class="pin pin-aeroporto" id="pinAeroporto">
+
+      <img src="images/tela-foto-area/logo-verde-vida.png" alt="Pin Verde Vida" class="pin pin-verde-vida"
+        id="pinVerdeVida">
+
+      <img src="images/tela-foto-area/sao-paulo.png" alt="Pin Sao Paulo" class="pin pin-sao-paulo" id="pinSaoPaulo">
+
+      <!-- Planta -->
+      <img src="images/tela-foto-area/plantinha.png" alt="Plantinha" class="plantinha-foto-area folha-ao-vento"
+        id="plantinhaFotoArea">
+    </div>
+
+    <!-- Barra lateral direita com botões -->
+    <div class="container-direita container-area-foto">
+
+      <!-- Botão 1 -->
+      <div class="botao-implantacao1-wrapper">
+        <img src="images/tela-foto-area/botoes/foto-aerea.png" alt="Implantação 1" class="botao-implantacao"
+          id="btnFotoAreaFotoArea">
+      </div>
+
+      <!-- Botão 2 -->
+      <div class="botao-implantacao2-wrapper">
+        <img src="images/tela-foto-area/botoes/pontos.png" alt="Implantação 2" class="botao-implantacao"
+          id="btnPontosFotoArea">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TELA PONTOS -->
+  <section id="tela-pontos" style="display: none;" class="fade-in">
+    <!-- Botão Fechar -->
+    <img src="images/tela-pontos/x.png" alt="Fechar" id="btnFecharPontos" class="botao-fechar">
+
+    <!-- Imagem de fundo -->
+    <img src="images/tela-pontos/fundo.png" alt="Fundo da Tela de Pontos" class="fundo-imagem" id="fundoPontos">
+
+    <!-- Barra lateral direita com botões -->
+    <div class="container-direita container-area-foto">
+
+      <!-- Botão 1 -->
+      <div class="botao-implantacao1-wrapper">
+        <img src="images/tela-pontos/botoes/foto-aerea.png" alt="Implantação 1" class="botao-implantacao"
+          id="btnFotoAreaPontos">
+      </div>
+
+      <!-- Botão 2 -->
+      <div class="botao-implantacao2-wrapper">
+        <img src="images/tela-pontos/botoes/pontos.png" alt="Implantação 2" class="botao-implantacao"
+          id="btnPontosPontos">
+      </div>
+    </div>
+
+    <img src="images/tela-pontos/texto.png" alt="Texto Pontos" class="texto-pontos">
+
+    <img src="images/tela-pontos/bairro-medeiros.png" alt="Nome do Bairro" class="faixa-bairro">
+
+    <img src="images/tela-pontos/maozinha.png" alt="Icone de mão" class="maozinha">
+
+    <img src="images/tela-pontos/plantinha.png" alt="Plantinha" class="plantinha-pontos">
+  </section>
+
+  <!-- TELA FILME -->
+  <section id="tela-filme" style="display: none;" class="fade-in">
+    <!-- Botão Fechar -->
+    <img src="images/tela-filme/x.png" alt="Fechar" id="btnFecharFilme" class="botao-fechar">
+
+    <!-- Imagem de fundo -->
+    <img src="images/tela-filme/fundo.png" alt="Fundo da Tela de Filme" class="fundo-imagem" id="fundoFilme">
+  </section>
+
+  <script src="script.js?v=1" defer></script>
+</body>
+
+</html>
