@@ -471,8 +471,7 @@ html {
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 3;
-  opacity: 1;
-  /* Mudar */
+  opacity: 0;
 }
 
 .pin-campinas {

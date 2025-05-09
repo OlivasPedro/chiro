@@ -84,4 +84,55 @@
     transform-origin: top right;
   }
   
-  
+
+  @keyframes cairDoCeu {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.pin {
+  animation: cairDoCeu 1s ease-out forwards;
+}
+
+/* Adiciona delay gradual se quiser um efeito cascata */
+#pinCampinas {
+  animation-delay: 0.1s;
+}
+#pinRodAnhanguera {
+  animation-delay: 0.2s;
+}
+#pinRodBandeirantes {
+  animation-delay: 0.3s;
+}
+#pinShoppingJundiai {
+  animation-delay: 0.4s;
+}
+#pinAeroporto {
+  animation-delay: 0.5s;
+}
+#pinVerdeVida {
+  animation-delay: 0.6s;
+}
+#pinSaoPaulo {
+  animation-delay: 0.7s;
+}
+
+@keyframes aceno {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(-15deg); }
+  40% { transform: rotate(15deg); }
+  60% { transform: rotate(-10deg); }
+  80% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.maozinha {
+  transform-origin: bottom center; /* ponto de rotação natural para um aceno */
+  animation: aceno 6s ease-in-out infinite;
+}
