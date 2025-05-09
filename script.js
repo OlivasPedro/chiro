@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Aplica animação de descida
     botoes.forEach((botao) => {
       botao.classList.add("botao-animado");
+
+      botao.addEventListener("animationend", () => {
+        botao.classList.remove("botao-animado");
+        botao.classList.add("botao-pulsando"); // segunda animação
+      }, { once: true }); // garante que só roda uma vez
     });
   });
 });
@@ -92,7 +97,7 @@ document.getElementById('botaoGaleria').addEventListener('click', () => {
 
   indexGaleria = 0;
   carregarImagemInicial()
-  
+
   const galeria = document.getElementById('tela-galeria');
   galeria.classList.remove('fade-in');
   void galeria.offsetWidth;
@@ -105,7 +110,7 @@ document.getElementById('botaoGaleria').addEventListener('click', () => {
 
 // Clique Botão Localizacao
 document.getElementById('botaoLocalizacao').addEventListener('click', () => {
-  
+
   const fotoArea = document.getElementById('tela-foto-area');
   fotoArea.classList.remove('fade-in');
   void fotoArea.offsetWidth;
@@ -118,7 +123,7 @@ document.getElementById('botaoLocalizacao').addEventListener('click', () => {
 
 // Clique Botao Filme
 document.getElementById('botaoFilme').addEventListener('click', () => {
-  
+
   const filme = document.getElementById('tela-filme');
   filme.classList.remove('fade-in');
   void filme.offsetWidth;
@@ -300,7 +305,7 @@ function irParaTelaUnidades() {
   telaUnidades.style.display = 'block';
 }
 
-function irParaTelaDiferenciais () {
+function irParaTelaDiferenciais() {
   // Oculta outras telas
   document.getElementById('tela-implantacao').style.display = 'none';
   document.getElementById('tela-unidades').style.display = 'none';
@@ -318,22 +323,22 @@ function irParaTelaDiferenciais () {
   telaDiferenciais.style.display = 'block';
 }
 
-function irParaTelaFichaTecnica () {
-    // Oculta outras telas
-    document.getElementById('tela-implantacao').style.display = 'none';
-    document.getElementById('tela-unidades').style.display = 'none';
-    document.getElementById('tela-diferenciais').style.display = 'none';
-    document.getElementById('menu').style.display = 'none';
-    document.getElementById('tela-descanso').style.display = 'none';
-  
-    // Reinicia a animação da tela de Diferenciais
-    const telaFichaTecnica = document.getElementById('tela-ficha-tecnica');
-    telaFichaTecnica.classList.remove('fade-in');
-    void telaFichaTecnica.offsetWidth; // força reflow
-    telaFichaTecnica.classList.add('fade-in');
-  
-    // Exibe a tela
-    telaFichaTecnica.style.display = 'block';
+function irParaTelaFichaTecnica() {
+  // Oculta outras telas
+  document.getElementById('tela-implantacao').style.display = 'none';
+  document.getElementById('tela-unidades').style.display = 'none';
+  document.getElementById('tela-diferenciais').style.display = 'none';
+  document.getElementById('menu').style.display = 'none';
+  document.getElementById('tela-descanso').style.display = 'none';
+
+  // Reinicia a animação da tela de Diferenciais
+  const telaFichaTecnica = document.getElementById('tela-ficha-tecnica');
+  telaFichaTecnica.classList.remove('fade-in');
+  void telaFichaTecnica.offsetWidth; // força reflow
+  telaFichaTecnica.classList.add('fade-in');
+
+  // Exibe a tela
+  telaFichaTecnica.style.display = 'block';
 }
 
 // Mudança de imagens da unidades
@@ -457,33 +462,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Funções Tela Localização
 function irParaTelaFotoArea() {
-    // Oculta outras telas
+  // Oculta outras telas
 
-    document.getElementById('menu').style.display = 'none';
-    document.getElementById('tela-pontos').style.display = 'none';
-  
-    // Reinicia a animação da tela de Foto Area
-    const telaFotoArea = document.getElementById('tela-foto-area');
-    telaFotoArea.classList.remove('fade-in');
-    void telaFotoArea.offsetWidth; // força reflow
-    telaFotoArea.classList.add('fade-in');
-  
-    // Exibe a tela
-    telaFotoArea.style.display = 'block';
+  document.getElementById('menu').style.display = 'none';
+  document.getElementById('tela-pontos').style.display = 'none';
+
+  // Reinicia a animação da tela de Foto Area
+  const telaFotoArea = document.getElementById('tela-foto-area');
+  telaFotoArea.classList.remove('fade-in');
+  void telaFotoArea.offsetWidth; // força reflow
+  telaFotoArea.classList.add('fade-in');
+
+  // Exibe a tela
+  telaFotoArea.style.display = 'block';
 }
 
 function irParaTelaPontos() {
 
-    // Oculta outras telas
-    document.getElementById('menu').style.display = 'none';
-    document.getElementById('tela-foto-area').style.display = 'none';
-  
-    // Reinicia a animação da tela de Foto Area
-    const telaPontos = document.getElementById('tela-pontos');
-    telaPontos.classList.remove('fade-in');
-    void telaPontos.offsetWidth; // força reflow
-    telaPontos.classList.add('fade-in');
-  
-    // Exibe a tela
-    telaPontos.style.display = 'block';
+  // Oculta outras telas
+  document.getElementById('menu').style.display = 'none';
+  document.getElementById('tela-foto-area').style.display = 'none';
+
+  // Reinicia a animação da tela de Foto Area
+  const telaPontos = document.getElementById('tela-pontos');
+  telaPontos.classList.remove('fade-in');
+  void telaPontos.offsetWidth; // força reflow
+  telaPontos.classList.add('fade-in');
+
+  // Exibe a tela
+  telaPontos.style.display = 'block';
 }

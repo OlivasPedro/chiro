@@ -176,10 +176,6 @@ html {
   animation-delay: 0.55s;
 }
 
-.botao-menu:hover {
-  transform: scale(1.05);
-}
-
 /* Tela de implantacao */
 
 .botao-fechar {
