@@ -1,13 +1,3 @@
-function isMobileDevice() {
-  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
-}
-
-if (isMobileDevice()) {
-  document.getElementById('aviso-mobile').style.display = 'block';
-  document.body.style.overflow = 'hidden'; // impede rolagem
-}
-
-
 /// Functions para deixar a tela cheia
 function entrarEmTelaCheia() {
   let elem = document.documentElement;
