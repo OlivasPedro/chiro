@@ -119,6 +119,13 @@
     </div>
   </section>
 
+  <!-- POPUP DE ZOOM DA IMPLANTAÇÃO -->
+  <div id="popupImplantacao" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <img src="" alt="Zoom da Planta" id="imagemZoomImplantacao" />
+    </div>
+  </div>
+
   <!-- TELA DE UNIDADES -->
   <section id="tela-unidades" style="display: none;" class="fade-in">
 
@@ -173,6 +180,14 @@
 
   </section>
 
+  <!-- POPUP DE ZOOM DAS UNIDADES -->
+  <div id="popupUnidades" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <img src="" alt="Zoom da Planta Unidades" id="imagemZoomUnidades" />
+    </div>
+  </div>
+
+
   <!-- TELA DE DIFERENCIAIS -->
   <section id="tela-diferenciais" style="display: none;" class="fade-in">
 
@@ -223,20 +238,40 @@
 
     <!-- Grid de diferenciais -->
     <div class="grid-diferenciais">
-      <img src="images/tela-diferenciais/reuso-de-agua.png" alt="Reuso de água">
-      <img src="images/tela-diferenciais/aqueimento-solar.png" alt="Aquecimento Solar">
-      <img src="images/tela-diferenciais/irrigacao.png" alt="Irrigação Automatizada">
-      <img src="images/tela-diferenciais/04-piscinas.png" alt="Piscinas Aquecidas">
-      <img src="images/tela-diferenciais/academia.png" alt="Academia">
-      <img src="images/tela-diferenciais/geradores-a-gas.png" alt="Geradores a Gás">
-      <img src="images/tela-diferenciais/reuso-de-agua.png" alt="Revestimento Porcelanato">
-      <img src="images/tela-diferenciais/area-verde-privada.png" alt="Área verde privativa">
-      <img src="images/tela-diferenciais/iluminacao-energia-solar.png" alt="Energia Solar">
-      <img src="images/tela-diferenciais/fiacao-eletrica.png" alt="Fiação Subterrânea">
-      <img src="images/tela-diferenciais/prainha.png" alt="Prainha">
-      <img src="images/tela-diferenciais/ponto-recarga-carros.png" alt="Recarga Carro Elétrico">
+      <div class="item-diferencial"><img src="images/tela-diferenciais/reuso-de-agua.png" alt="Reuso de água"></div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/aqueimento-solar.png" alt="Aquecimento Solar">
+      </div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/irrigacao.png" alt="Irrigação Automatizada">
+      </div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/piscina.png" alt="Piscinas Aquecidas"></div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/academia.png" alt="Academia"></div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/geradores-a-gas.png" alt="Geradores a Gás"></div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/revestimento-porcelanato.png"
+          alt="Revestimento Porcelanato"></div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/area-verde-privada.png"
+          alt="Área verde privativa"></div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/iluminacao-energia-solar.png"
+          alt="Energia Solar"></div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/fiacao-eletrica.png" alt="Fiação Subterrânea">
+      </div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/prainha.png" alt="Prainha"></div>
+      <div class="item-diferencial"><img src="images/tela-diferenciais/ponto-recarga-carros.png"
+          alt="Recarga Carro Elétrico"></div>
     </div>
+
+
   </section>
+
+  <!-- POPUP DE ZOOM DIFERENCIAIS -->
+  <div id="popupDiferenciais" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+      <img id="imagemZoomDiferenciais" style="display: none;" />
+      <video id="videoZoomDiferenciais" autoplay muted controls
+        style="display: none; max-width: 90vw; max-height: 90vh;"></video>
+    </div>
+  </div>
+
+
 
   <!-- TELA DE FICHA TECNICA -->
   <section id="tela-ficha-tecnica" style="display: none;" class="fade-in">

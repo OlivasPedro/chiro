@@ -362,8 +362,47 @@ document.getElementById('setaEsquerdaUnidades').addEventListener('click', () => 
 
 // Pop up da galeria
 const nomesDasImagens = [
-  "beach-lounge.png",
+  "boulevard.png",               // 03 - Boulevard
+  "piscina-coberta.png",         // 05 - Piscina Aquecida Coberta
+  "quadra.png",                  // 06 - Quadra Poliesportiva
+  "academia.png",                // 08 - Fitness
+  "mercado.png",                 // 09 - Mini Mercado
+  "hall.png",                    // 10 - Hall
+  "lockers.png",                 // 11 - Lockers
+  "auditorio.png",               // 12 - Auditório
+  "lounge.png",                  // 13 - Lounge
+  "festas.png",         // 14 - Salão de Festas
+  "brinquedoteca.png",           // 01 - Brinquedoteca (2º bolotário)
+  "sala-de-reuniao.png",         // 03 - Cabine de Reunião
+  "lavanderia.png",              // 04 - Lavanderia
+  "coworking.png",               // 05 - Coworking
+  "churrasqueira.png",           // 01/02 - Churrasqueiras
 
+  // Os que não estão no bolotário (extra)
+  "beach-lounge.png",
+  "beach-tennis.png",
+  "entrada.png",
+  "fachada.png",
+  "fachada-02.png",
+  "fachada-03.png",
+  "fachada-04.png",
+  "festas.png",
+  "gourmet.png",
+  "painel-solar.png",
+  "paisagismo.png",
+  "pergolado.png",
+  "pet-place.png",
+  "piscina.png",
+  "prainha.png",
+  "multiplay.png",
+  "living-bloco-01.png",
+  "living-bloco-02.png",
+  "living-setor-01.png",
+  "living-setor-01-b.png",
+  "living-setor-02.png",
+  "living-setor-03.png",
+  "voo.png",
+  "voo-02.png"
 ];
 
 let indexGaleria = 0;
@@ -374,8 +413,8 @@ const imagemZoom = document.querySelector(".imagem-zoom");
 const btnPrev = document.getElementById("setaEsquerdaGaleria");
 const btnNext = document.getElementById("setaDireitaGaleria");
 const popupZoom = document.getElementById("popupZoom");
-const popupOverlay = document.querySelector(".popup-overlay");
-const popupContent = document.querySelector(".popup-content");
+const popupOverlay = document.querySelector("#popupZoom .popup-overlay");
+const popupContent = document.querySelector("#popupZoom .popup-content");
 
 // Gera o caminho da imagem do popup a partir do nome base
 function gerarNomePopup(nomeOriginal) {
@@ -416,16 +455,95 @@ function carregarImagemInicial() {
 }
 carregarImagemInicial();
 
+// ========== SWIPE NA GALERIA ==========
+
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
+let wasDragged = false;
+
+function startDrag(x) {
+  startX = x;
+  currentX = x;
+  isDragging = true;
+  wasDragged = false;
+  imagemPrincipal.style.transition = 'none';
+}
+
+function drag(x) {
+  if (!isDragging) return;
+  wasDragged = true;
+  currentX = x;
+  const diff = currentX - startX;
+  imagemPrincipal.style.transform = `translateX(${diff}px)`;
+}
+
+function endDrag() {
+  if (!isDragging) return;
+  isDragging = false;
+
+  const diff = currentX - startX;
+  imagemPrincipal.style.transition = 'transform 0.3s ease';
+  imagemPrincipal.style.transform = 'translateX(0)';
+
+  if (Math.abs(diff) > 50) {
+    if (diff < 0) {
+      trocarImagem("next");
+    } else {
+      trocarImagem("prev");
+    }
+  }
+
+  // Reset
+  startX = 0;
+  currentX = 0;
+}
+
+// TOUCH EVENTS
+imagemPrincipal.addEventListener("touchstart", (e) => {
+  startDrag(e.touches[0].clientX);
+}, { passive: false });
+
+imagemPrincipal.addEventListener("touchmove", (e) => {
+  drag(e.touches[0].clientX);
+}, { passive: false });
+
+imagemPrincipal.addEventListener("touchend", () => {
+  endDrag();
+});
+
+// MOUSE EVENTS
+imagemPrincipal.addEventListener("mousedown", (e) => {
+  e.preventDefault();
+  startDrag(e.clientX);
+
+  const onMouseMove = (e) => drag(e.clientX);
+  const onMouseUp = () => {
+    endDrag();
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
+  };
+
+  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mouseup", onMouseUp);
+});
+
+
 // Abrir popup
 imagemPrincipal.addEventListener("click", () => {
+  if (wasDragged) {
+    wasDragged = false; // reseta após o swipe
+    return; // cancela o clique se foi arrasto
+  }
+
   const nome = nomesDasImagens[indexGaleria];
-  const timestamp = Date.now(); // Evita cache
-  imagemZoom.src = `images/tela-galeria/aberta/${gerarNomePopup(nome)}?v=${timestamp}`;
+  imagemZoom.src = `images/tela-galeria/aberta/${gerarNomePopup(nome)}`;
   popupZoom.style.display = "flex";
   setTimeout(() => {
     popupOverlay.style.opacity = 1;
   }, 10);
 });
+
 
 // Fechar popup clicando fora
 popupOverlay.addEventListener("click", (event) => {
@@ -481,4 +599,159 @@ function irParaTelaPontos() {
 
   // Exibe a tela
   telaPontos.style.display = 'block';
+}
+
+const fundoImplantacao = document.getElementById('fundoImplantacao');
+const popupImplantacao = document.getElementById('popupImplantacao');
+const imagemZoomImplantacao = document.getElementById('imagemZoomImplantacao');
+
+fundoImplantacao.addEventListener('click', () => {
+  // Extrai apenas o nome do arquivo original
+  const srcOriginal = fundoImplantacao.src;
+  const nomeArquivo = srcOriginal.split('/').pop(); // ex: setor-01-fundo.png
+
+  // Remove o sufixo '-fundo' do nome e troca de pasta
+  const nomeZoom = nomeArquivo.replace('-fundo', '');
+  const novoCaminho = `images/tela-implantacao/zoom/${nomeZoom}`;
+
+  // Atualiza e exibe o popup
+  imagemZoomImplantacao.src = novoCaminho;
+  popupImplantacao.style.display = 'flex';
+  setTimeout(() => {
+    popupImplantacao.style.opacity = 1;
+  }, 10);
+});
+
+// Fecha ao clicar fora da imagem
+popupImplantacao.addEventListener('click', (e) => {
+  if (!imagemZoomImplantacao.contains(e.target)) {
+    popupImplantacao.style.opacity = 0;
+    setTimeout(() => {
+      popupImplantacao.style.display = 'none';
+    }, 300);
+  }
+});
+
+const fundoUnidades = document.getElementById('fundoUnidades');
+const popupUnidades = document.getElementById('popupUnidades');
+const imagemZoomUnidades = document.getElementById('imagemZoomUnidades');
+
+fundoUnidades.addEventListener('click', () => {
+  // Extrai apenas o nome da imagem original
+  const srcOriginal = fundoUnidades.src;
+  const nomeArquivo = srcOriginal.split('/').pop(); // ex: fundo-01.png
+
+  // Constrói o novo caminho para a pasta zoom
+  const novoCaminho = `images/tela-unidades/zoom/${nomeArquivo}`;
+
+  imagemZoomUnidades.src = novoCaminho;
+  popupUnidades.style.display = 'flex';
+
+  setTimeout(() => {
+    popupUnidades.style.opacity = 1;
+  }, 10);
+});
+
+// Fechar popup clicando fora da imagem
+popupUnidades.addEventListener('click', (e) => {
+  if (!imagemZoomUnidades.contains(e.target)) {
+    popupUnidades.style.opacity = 0;
+    setTimeout(() => {
+      popupUnidades.style.display = 'none';
+    }, 300);
+  }
+});
+
+const popupDiferenciais = document.getElementById("popupDiferenciais");
+const imagemZoomDiferenciais = document.getElementById("imagemZoomDiferenciais");
+const videoZoomDiferenciais = document.getElementById("videoZoomDiferenciais");
+
+// Itens do grid (menos os dois últimos)
+const itensDiferenciais = document.querySelectorAll('.grid-diferenciais .item-diferencial');
+
+itensDiferenciais.forEach((item) => {
+  item.addEventListener("click", () => {
+    const imagem = item.querySelector("img");
+    const src = imagem.getAttribute("src");
+
+    if (
+      src.includes("area-verde-privada.png") ||
+      src.includes("ponto-recarga-carros.png")
+    ) {
+      return; // Ignora o clique nesses dois
+    }
+
+    const nomeBase = src.split("/").pop().replace(".png", "");
+
+    const caminhos = [
+      `images/tela-diferenciais/zoom/${nomeBase}.mp4`,
+      `images/tela-diferenciais/zoom/${nomeBase}.jpg`,
+      `images/tela-diferenciais/zoom/${nomeBase}.png`,
+    ];
+
+    imagemZoomDiferenciais.style.display = "none";
+    videoZoomDiferenciais.style.display = "none";
+
+    verificarExistenciaDeArquivo(caminhos)
+      .then((caminhoValido) => {
+        if (caminhoValido.endsWith(".mp4")) {
+          videoZoomDiferenciais.src = caminhoValido;
+          videoZoomDiferenciais.style.display = "block";
+          videoZoomDiferenciais.load();
+        } else {
+          imagemZoomDiferenciais.src = caminhoValido;
+          imagemZoomDiferenciais.style.display = "block";
+        }
+
+        popupDiferenciais.style.display = "flex";
+        setTimeout(() => {
+          popupDiferenciais.style.opacity = 1;
+        }, 10);
+      })
+      .catch(() => {
+        console.warn("Arquivo não encontrado para:", nomeBase);
+      });
+  });
+});
+
+
+// Fecha ao clicar fora
+popupDiferenciais.addEventListener("click", (e) => {
+  if (!popupDiferenciais.querySelector(".popup-content").contains(e.target)) {
+    popupDiferenciais.style.opacity = 0;
+    videoZoomDiferenciais.pause();
+    setTimeout(() => {
+      popupDiferenciais.style.display = "none";
+    }, 300);
+  }
+});
+
+// Função auxiliar para checar qual caminho existe
+function verificarExistenciaDeArquivo(caminhos) {
+  return new Promise((resolve, reject) => {
+    let i = 0;
+
+    function tentarProximo() {
+      if (i >= caminhos.length) return reject();
+
+      const caminho = caminhos[i];
+      const xhr = new XMLHttpRequest();
+      xhr.open('HEAD', caminho, true);
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          resolve(caminho);
+        } else {
+          i++;
+          tentarProximo();
+        }
+      };
+      xhr.onerror = () => {
+        i++;
+        tentarProximo();
+      };
+      xhr.send();
+    }
+
+    tentarProximo();
+  });
 }
